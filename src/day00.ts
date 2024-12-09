@@ -1,8 +1,8 @@
 const day = Deno.mainModule.split('/').pop()?.split('.')[0];
 const input = Deno.readTextFileSync(`input/${day}.txt`);
 
-console.log(solve1(input));
-console.log(solve2(input));
+console.log(`part1: ${solve1(input)}`);
+console.log(`part2: ${solve2(input)}`);
 
 function solve1(input: string){
     return null;
