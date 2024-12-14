@@ -23,6 +23,7 @@ function solve1(input: string){
 }
 
 function getTrailheadScores(map: number[][], trailheads: point[]): number {
+
     return trailheads.reduce((acc, trailhead) => acc + getScore(map, trailhead), 0);
 }
 
@@ -42,12 +43,11 @@ function getScore(map: number[][], trailhead: point): number {
             }
 
             const neighbors: point[] = getNextSteps(map, current);
-        for (const neighbor of neighbors){
+            neighbors.forEach(neighbor => {
                 if(inMap(map, neighbor) && !visited.has(toString(neighbor))){
                     toVisit.push(neighbor);
                 }
-
-        }
+            });
         }
     }
     return count;
